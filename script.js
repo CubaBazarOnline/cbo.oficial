@@ -73,4 +73,20 @@ closeBtn.addEventListener('click',function(){closeNotification(notification);});
 if(duration){setTimeout(function(){closeNotification(notification);},duration);}}
 function closeNotification(notification){
 notification.classList.remove('show');
-setTimeout(function(){notification.remove();},300);}});
+setTimeout(function(){notification.remove();},300);}
+function showPromoNotification(){
+if(Notification.permission==='granted'){
+new Notification('¡Oferta Especial CBO!',{
+body:'10% de descuento en todos nuestros servicios este mes',
+icon:'https://yourwebsite.com/icon.png'});
+}else if(Notification.permission!=='denied'){
+Notification.requestPermission().then(function(permission){
+if(permission==='granted'){
+new Notification('¡Oferta Especial CBO!',{
+body:'10% de descuento en todos nuestros servicios este mes',
+icon:'https://yourwebsite.com/icon.png'});}});}}
+if('serviceWorker'in navigator){
+navigator.serviceWorker.register('sw.js').then(function(registration){
+console.log('ServiceWorker registration successful');}).catch(function(err){
+console.log('ServiceWorker registration failed: ',err);});}
+setTimeout(showPromoNotification,3000);});
