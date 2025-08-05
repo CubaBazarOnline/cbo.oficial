@@ -1,45 +1,26 @@
-CBO - Soluciones Web para MIPYMES
+🌐 CBO — Soluciones Web para MIPYMES
 
-Plataforma dedicada a la creación de páginas web accesibles para pequeñas y medianas empresas con servidor incluido.
+---
 
-Características Principales
+✨ ¿Por qué elegirnos?
 
-🚀 Páginas web funcionales en menos de 7 días
+- 🚀 Entrega rápida.
+- 📱 Diseño adaptable.
+- 🛍️ Soluciones para negocios.
+- 🆓 Incluye hosting gratis.
+- 📞 Soporte técnico.
 
-💻 Diseños adaptables para todos los dispositivos
+---
 
-🛒 Soluciones para tiendas virtuales y negocios locales
+📈 Impulsa tu negocio en línea
 
-🆓 Hosting incluido por 30 días en todos los planes
+Te ayudamos a destacar en internet con profesionalidad tu mercado. Desde pequeños restaurantes hasta artesanos tu presencia web comienza aquí.
 
-📞 Soporte técnico disponible 8/5
+---
 
-Servicios Ofrecidos
+📣 ¿Listo para comenzar?
 
-Tienda Virtual SIMPLE ($8000/CUP/mes)
+💬 Contáctanos hoy mismo y da el primer paso hacia tu presencia digital  
+📍 Ubicados en La Habana — Apoyando el crecimiento
 
-Diseño web simple y funcional
-
-Hasta 20 productos
-
-Carrito de compras integrado
-
-Métodos de pago configurados
-
-Formulario de contacto
-
-Servidor incluido por 30 días
-
-Servicio Local SIMPLE ($8000/CUP/mes)
-
-Página informativa para negocios físicos
-
-Galería de imágenes
-
-Horarios y ubicación con mapa
-
-Formulario de reservas/contacto
-
-Enlaces a redes sociales
-
-Servidor incluido por 30 días
+---
