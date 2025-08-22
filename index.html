@@ -14,20 +14,686 @@
     <meta property="og:description" content="Plataforma CBO dedicada a la creación de páginas web">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tusitio.com">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preload" href="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #3b82f6;
+            --accent: #8b5cf6;
+            --light: #f8fafc;
+            --dark: #020617;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --text-light: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--accent));
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light);
+            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-light);
+            margin: 2px 0;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: var(--text-light);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+            -webkit-appearance: none;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            outline: none;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-accent {
+            background: var(--gradient-primary);
+            margin-left: 1rem;
+        }
+
+        .btn-download {
+            background: var(--success);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-tcubita {
+            background: var(--accent);
+        }
+
+        section {
+            padding: 5rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--text-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-img {
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .service-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .service-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-content ul li {
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+            color: var(--text-muted);
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .contact {
+            background-color: var(--text-light);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--text-light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        footer {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .social-links a:hover,
+        .social-links a:focus {
+            color: var(--text-light);
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+            outline: none;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            transform: translateX(150%);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            max-width: 90%;
+            border: none;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: var(--success);
+        }
+
+        .notification.error {
+            background: var(--error);
+        }
+
+        .notification.warning {
+            background: var(--warning);
+        }
+
+        .notification i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .close-notification {
+            margin-left: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.2rem;
+        }
+
+        .notification-schedule {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 10px 15px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .notification-schedule i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .close-schedule {
+            margin-left: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 992px) {
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .hero-buttons .btn-accent {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 0;
+            }
+
+            .service-img {
+                height: 150px;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .header-buttons {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--gradient-primary);
+                width: 100%;
+                padding: 1rem;
+                box-shadow: var(--shadow-lg);
+                transition: right 0.3s ease;
+            }
+
+            .header-buttons.active {
+                right: 0;
+            }
+
+            .header-buttons a {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding-top: 70px;
+                background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95));
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .social-links a {
+                margin: 0.25rem;
+            }
+        }
+
+        @media print {
+            header,
+            footer {
+                display: none !important;
+            }
+
+            body {
+                background: none;
+                color: #000;
+            }
+
+            .hero {
+                height: auto;
+                min-height: auto;
+                background: none !important;
+                color: #000;
+                padding: 1rem 0;
+            }
+
+            section {
+                padding: 1rem 0;
+                page-break-inside: avoid;
+            }
+
+            .btn {
+                display: none !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --primary: #000;
+                --secondary: #005a9c;
+                --accent: #c00;
+                --text-dark: #000;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="notification-container" aria-live="polite"></div>
-    
     <header role="banner">
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo" aria-label="CBO - Inicio">
-                    <img src="logo.png" alt="CBO Logo" class="logo-img">
                     <span>CBO</span>
                 </a>
                 <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -46,13 +712,13 @@
             </div>
         </div>
     </header>
-
     <main>
         <section class="hero" role="region" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="hero-heading">Soluciones Web para tu MIPYME</h1>
-                    <p>Ofrecemos páginas web accesibles y funcionales para pequeñas y medianas empresas, con todo lo necesario para tener presencia en internet.</p>
+                    <h1 id="hero-heading">OBTEN UN SOPORTE WEB</h1>
+                    <p>● Ofrecemos páginas web accesibles y funcionales para pequeñas entidades.</p>
+                    <p>● Con todo lo necesario para tener presencia en internet.</p>
                     <div class="hero-buttons">
                         <a href="#services" class="btn">Ver Planes</a>
                         <a href="#contact" class="btn btn-accent">Contactar</a>
@@ -60,74 +726,67 @@
                 </div>
             </div>
         </section>
-
         <section id="services" class="services-section" role="region" aria-labelledby="services-heading">
             <div class="container">
                 <div class="section-title">
-                    <h2 id="services-heading">Nuestros Servicios</h2>
-                    <p>Paquetes completos para impulsar tu negocio en línea</p>
+                    <h2 id="services-heading">ELIGE UN PLAN</h2>
                 </div>
                 <div class="services">
                     <div class="service-card" role="article">
                         <div class="service-img">
-                            <i class="fas fa-store" aria-hidden="true"></i>
+                            <div class="service-tag">TIENDA</div>
                         </div>
                         <div class="service-content">
-                            <h3>Tienda Virtual</h3>
+                            <h3>Características</h3>
                             <ul>
-                                <li>Diseño web simple y funcional</li>
-                                <li>Hasta 20 productos máximo</li>
+                                <li>Diseño web simple</li>
+                                <li>20 productos máximo</li>
                                 <li>Carrito de compras</li>
-                                <li>Integración con métodos de pago</li>
-                                <li>Actualizaciones cada 15 días</li>
-                                <li>Servidor incluido</li>
+                                <li>métodos de envio</li>
+                                <li>Servidor por 6 meses</li>
                             </ul>
-                            <div class="price">$6000/CUP</div>
-                            <a href="#contact" class="btn">Contratar</a>
+                            <div class="price">$4000/CUP</div>
+                            <a href="#contact" class="btn">Solicitar</a>
                         </div>
                     </div>
                     <div class="service-card" role="article">
                         <div class="service-img">
-                            <i class="fas fa-building" aria-hidden="true"></i>
+                            <div class="service-tag">SERVICIO</div>
                         </div>
                         <div class="service-content">
-                            <h3>Servicio Local</h3>
+                            <h3>Características</h3>
                             <ul>
-                                <li>Información sobre tu oferta</li>
-                                <li>Galería de imágenes</li>
-                                <li>Horarios y ubicación</li>
-                                <li>Formulario de contacto/reservas</li>
+                                <li>Información de oferta</li>
+                                <li>Galería de imágenes 4 maximo</li>
+                                <li>Datos de horarios/ubicación</li>
+                                <li>Sistema de reserva</li>
                                 <li>Enlace a redes sociales</li>
-                                <li>Servidor incluido</li>
+                                <li>Servidor 6 meses</li>
                             </ul>
-                            <div class="price">$6000/CUP</div>
-                            <a href="#contact" class="btn">Contratar</a>
+                            <div class="price">$4000/CUP</div>
+                            <a href="#contact" class="btn">Solicitar</a>
                         </div>
                     </div>
                     <div class="service-card" role="article">
                         <div class="service-img">
-                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                            <div class="service-tag">PROMO</div>
                         </div>
                         <div class="service-content">
-                            <h3>Extra</h3>
+                            <h3>Características</h3>
                             <ul>
-                                <li>Promoción</li>
-                                <li>Atención al cliente</li>
-                                <li>Rápido y Eficiente</li>
+                                <li>Eficiente</li>
+                                <li>Rápido</li>
                             </ul>
-                            <div class="price">Variable/CUP</div>
-                            <a href="https://wa.me/5355112410?text=Saludos%20elegí%20este%20servicio%20por%20recomendación%20de%20cbo%20en%20cómo%20me%20puedes%20ayudar" class="btn btn-accent">Contactar por WhatsApp</a>
+                            <a href="https://wa.me/5355112410?text=Saludos%20elegí%20este%20servicio%20por%20recomendación%20de%20cbo%20en%20cómo%20me%20puedes%20ayudar" class="btn btn-accent">Solicitar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <section id="contact" class="contact" role="region" aria-labelledby="contact-heading">
             <div class="container">
                 <div class="section-title">
-                    <h2 id="contact-heading">Contáctanos</h2>
-                    <p>Envíanos un mensaje y te responderemos pronto</p>
+                    <h2 id="contact-heading">Contáctar</h2>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm" role="form" novalidate>
@@ -147,16 +806,16 @@
                             <small id="phone-help" class="help-text">Opcional</small>
                         </div>
                         <div class="form-group">
-                            <label for="service">Servicio de interés</label>
+                            <label for="service">Plan de interés</label>
                             <select id="service" name="service" required aria-required="true">
-                                <option value="">Seleccione un servicio</option>
-                                <option value="tienda">Tienda Virtual</option>
+                                <option value="">Seleccionar plan</option>
+                                <option value="tienda">Tienda Online</option>
                                 <option value="local">Servicio Local</option>
                             </select>
                             <span class="error-message" id="service-error"></span>
                         </div>
                         <div class="form-group">
-                            <label for="message">Mensaje</label>
+                            <label for="message">Describe como deseas tu web</label>
                             <textarea id="message" name="message" required aria-required="true"></textarea>
                             <span class="error-message" id="message-error"></span>
                         </div>
@@ -168,27 +827,360 @@
             </div>
         </section>
     </main>
-
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <a href="#" class="logo" aria-label="CBO - Inicio">
-                    <img src="logo.png" alt="CBO Logo" class="logo-img">
                     <span>CBO</span>
                 </a>
-                <p>Soluciones web necesarias para MIPYMES</p>
+                <p>REDES OFICIALES</p>
                 <div class="social-links">
-                    <a href="#" aria-label="YouTube">
+                    <a href="https://youtube.com/@cbo_oficial?feature=shared" aria-label="YouTube" target="_blank" rel="noopener">
                         <i class="fab fa-youtube" aria-hidden="true"></i>
                     </a>
-                    <a href="#" aria-label="X">
+                    <a href="https://x.com/CubaBazarOnline?t=iOC4afVn_e60CmbOl2j3IQ&s=09" aria-label="X" target="_blank" rel="noopener">
                         <i class="fab fa-x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029Vb61NTa5vKA3hCMIQr3j" aria-label="WhatsApp" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initApp();
+            setupEventListeners();
+        });
 
-    <script src="script.js"></script>
+        function initApp() {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    setTimeout(function() {
+                        target.scrollIntoView();
+                    }, 100);
+                }
+            }
+            setTimeout(requestNotificationPermission, 5000);
+        }
+
+        function setupEventListeners() {
+            setupSmoothScrolling();
+            window.addEventListener('scroll', handleHeaderScroll);
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleFormSubmit);
+                setupFormValidation(contactForm);
+            }
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMobileMenu);
+            }
+        }
+
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        scrollToElement(targetElement);
+                        updateBrowserHistory(targetId);
+                    }
+                });
+            });
+        }
+
+        function scrollToElement(element) {
+            if ('scrollBehavior' in document.documentElement.style) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'auto'
+                });
+            }
+        }
+
+        function updateBrowserHistory(hash) {
+            if (history.pushState) {
+                history.pushState(null, null, hash);
+            } else {
+                location.hash = hash;
+            }
+        }
+
+        function handleHeaderScroll() {
+            const header = document.querySelector('header');
+            if (!header) return;
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.padding = '0.5rem 0';
+                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'var(--gradient-primary)';
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.1)';
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value.trim()
+            };
+
+            if (!validateForm(formData)) {
+                return;
+            }
+
+            sendEmail(formData);
+            showNotification('success', 'Gracias por tu mensaje. Redirigiendo a tu cliente de correo...');
+            form.reset();
+        }
+
+        function validateForm(formData) {
+            let isValid = true;
+            const errors = {};
+
+            if (!formData.name) {
+                errors.name = 'El nombre es requerido';
+                isValid = false;
+            }
+
+            if (!formData.email) {
+                errors.email = 'El correo electrónico es requerido';
+                isValid = false;
+            } else if (!validateEmail(formData.email)) {
+                errors.email = 'Por favor ingrese un correo electrónico válido';
+                isValid = false;
+            }
+
+            if (!formData.service) {
+                errors.service = 'Por favor seleccione un servicio';
+                isValid = false;
+            }
+
+            if (!formData.message) {
+                errors.message = 'El mensaje es requerido';
+                isValid = false;
+            }
+
+            showFormErrors(errors);
+            return isValid;
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function showFormErrors(errors) {
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.textContent = '';
+            });
+
+            Object.keys(errors).forEach(field => {
+                const errorElement = document.getElementById(`${field}-error`);
+                if (errorElement) {
+                    errorElement.textContent = errors[field];
+                }
+            });
+        }
+
+        function setupFormValidation(form) {
+            const fields = form.querySelectorAll('input, select, textarea');
+            fields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                field.addEventListener('input', function() {
+                    clearFieldError(this);
+                });
+            });
+        }
+
+        function validateField(field) {
+            const value = field.value.trim();
+            const fieldName = field.name;
+            let error = '';
+
+            if (field.hasAttribute('required') && !value) {
+                error = 'Este campo es requerido';
+            } else if (fieldName === 'email' && value && !validateEmail(value)) {
+                error = 'Por favor ingrese un correo electrónico válido';
+            }
+
+            const errorElement = document.getElementById(`${fieldName}-error`);
+            if (errorElement) {
+                errorElement.textContent = error;
+            }
+
+            return !error;
+        }
+
+        function clearFieldError(field) {
+            const fieldName = field.name;
+            const errorElement = document.getElementById(`${fieldName}-error`);
+            if (errorElement) {
+                errorElement.textContent = '';
+            }
+        }
+
+        function sendEmail(formData) {
+            const emailBody = `Nombre: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ATeléfono: ${formData.phone || 'No proporcionado'}%0D%0AServicio de interés: ${formData.service}%0D%0A%0D%0AMensaje:%0D%0A${formData.message}`;
+            const mailtoLink = `mailto:cubabazaronline@gmail.com?subject=Solicitud de servicio CBO - ${formData.name}&body=${emailBody}`;
+            window.location.href = mailtoLink;
+        }
+
+        function showNotification(type, message, duration = 5000) {
+            const container = document.getElementById('notification-container');
+            if (!container) return;
+
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.setAttribute('role', 'alert');
+
+            let icon;
+            switch (type) {
+                case 'success':
+                    icon = '<i class="fas fa-check-circle" aria-hidden="true"></i>';
+                    break;
+                case 'error':
+                    icon = '<i class="fas fa-exclamation-circle" aria-hidden="true"></i>';
+                    break;
+                case 'warning':
+                    icon = '<i class="fas fa-exclamation-triangle" aria-hidden="true"></i>';
+                    break;
+                default:
+                    icon = '<i class="fas fa-info-circle" aria-hidden="true"></i>';
+            }
+
+            notification.innerHTML = `${icon}<span>${message}</span><button class="close-notification" aria-label="Cerrar notificación">&times;</button>`;
+            container.appendChild(notification);
+
+            setTimeout(function() {
+                notification.classList.add('show');
+            }, 10);
+
+            const closeBtn = notification.querySelector('.close-notification');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    closeNotification(notification);
+                });
+            }
+
+            if (duration) {
+                setTimeout(function() {
+                    closeNotification(notification);
+                }, duration);
+            }
+        }
+
+        function closeNotification(notification) {
+            notification.classList.remove('show');
+            setTimeout(function() {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 300);
+        }
+
+        function requestNotificationPermission() {
+            if (Notification && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        showDailyNotifications();
+                    }
+                });
+            } else if (Notification && Notification.permission === 'granted') {
+                showDailyNotifications();
+            }
+        }
+
+        function showDailyNotifications() {
+            const messages = [{
+                    type: 'info',
+                    title: 'Recordatorio CBO',
+                    message: '¿Sabías que puedes actualizar tu página web cada 15 días sin costo adicional?',
+                    icon: 'fas fa-sync-alt'
+                },
+                {
+                    type: 'promo',
+                    title: 'Oferta Especial CBO',
+                    message: 'Clientes frecuentes obtienen 10% de descuento en su tercer mes',
+                    icon: 'fas fa-percentage'
+                },
+                {
+                    type: 'success',
+                    title: '¡Felicitaciones!',
+                    message: 'Más de 50 MIPYMES ya tienen su sitio web con CBO',
+                    icon: 'fas fa-trophy'
+                },
+                {
+                    type: 'warning',
+                    title: 'Soporte Disponible',
+                    message: 'Recuerda que nuestro equipo de soporte está disponible para ayudarte',
+                    icon: 'fas fa-headset'
+                }
+            ];
+
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            if (Notification && Notification.permission === 'granted') {
+                new Notification(randomMessage.title, {
+                    body: randomMessage.message
+                });
+            }
+
+            const notificationHTML = `
+                <div class="notification-schedule">
+                    <i class="${randomMessage.icon}" aria-hidden="true"></i>
+                    <span>${randomMessage.message}</span>
+                    <button class="close-schedule" aria-label="Cerrar notificación">&times;</button>
+                </div>
+            `;
+
+            const notificationElement = document.createElement('div');
+            notificationElement.innerHTML = notificationHTML;
+            document.body.appendChild(notificationElement);
+
+            const closeBtn = notificationElement.querySelector('.close-schedule');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    notificationElement.remove();
+                });
+            }
+
+            setTimeout(() => {
+                if (notificationElement.parentNode) {
+                    notificationElement.remove();
+                }
+            }, 10000);
+        }
+
+        function toggleMobileMenu() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const headerButtons = document.querySelector('.header-buttons');
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            headerButtons.classList.toggle('active');
+        }
+
+        setInterval(showDailyNotifications, 24 * 60 * 60 * 1000);
+    </script>
 </body>
 </html>
