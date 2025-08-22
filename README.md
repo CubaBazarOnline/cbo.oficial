@@ -1,26 +1,15 @@
-🌐 CBO — Soluciones Web para MIPYMES
-
----
+🚀 CBO
 
 ✨ ¿Por qué elegirnos?
 
-- 🚀 Entrega rápida.
-- 📱 Diseño adaptable.
-- 🛍️ Soluciones para negocios.
-- 🆓 Incluye hosting gratis.
+- 🚀 Entrega en 48 horas.
+- 📱 Diseño simple.
+- 🛍️ Planes para negocios.
+- 🆓 servidor por 6 meses.
 - 📞 Soporte técnico.
 
----
+📈 Impulsate en línea:
 
-📈 Impulsa tu negocio en línea
-
-Te ayudamos a destacar en internet con profesionalidad tu mercado. Desde pequeños restaurantes hasta artesanos tu presencia web comienza aquí.
-
----
+Te ayudamos a destacar en internet con profesionalidad tu mercado.
 
 📣 ¿Listo para comenzar?
-
-💬 Contáctanos hoy mismo y da el primer paso hacia tu presencia digital  
-📍 Ubicados en La Habana — Apoyando el crecimiento
-
----
