@@ -1,1 +1,756 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>CBO</title><meta name="keywords" content="soporte web"/><meta name="author" content="🚀CBO"/><meta name="robots" content="index,follow"/><meta name="google-site-verification" content="KwYd-p4Sl1VlkdQmdyKKgwMpT7BsxFKygnGzibzNijQ"/><meta property="og:title" content="🚀CBO"/><meta property="og:type" content="website"/><meta property="og:url" content="https://cbo-cubabazaronlines-projects.vercel.app/"/><link rel="icon" href="favicon.png" type="image/png"/><link rel="preconnect" href="https://cdnjs.cloudflare.com"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/><style>:root{--bg:#fff;--text:#111;--primary:#0f172a;--accent:#3b82f6;--light:#f8fafc;--shadow:0 4px 6px rgba(0,0,0,0.1);--radius:8px;--transition:all 0.2s ease;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI',sans-serif;line-height:1.5;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}button{outline:none;}input,textarea,select{font-family:'Segoe UI',sans-serif;}a{text-decoration:none;}ul{list-style:none;}img{max-width:100%;height:auto;}.container{width:90%;max-width:1000px;margin:0 auto;padding:0 15px;}.hidden{display:none;}header{background:var(--primary);color:white;padding:1rem 0;position:sticky;top:0;z-index:1000;}.header-content{display:flex;justify-content:space-between;align-items:center;}.logo{font-weight:700;color:white;text-decoration:none;font-size:1.5rem;}.menu-toggle{display:none;flex-direction:column;gap:5px;width:30px;height:20px;background:transparent;border:none;cursor:pointer;}.menu-toggle span{height:2px;background:white;border-radius:1px;transition:0.3s;}.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}.header-buttons{display:flex;gap:10px;}.btn{display:inline-block;background:var(--accent);color:white;padding:0.6rem 1.2rem;border-radius:var(--radius);text-decoration:none;font-size:0.9rem;font-weight:600;transition:var(--transition);border:none;cursor:pointer;text-align:center;}.btn:hover{opacity:0.9;transform:translateY(-2px);}.hero{height:80vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;background:#0f172a;color:white;padding:2rem 0;}.hero h1{font-size:2.2rem;margin-bottom:1rem;}.hero p{font-size:1rem;opacity:0.9;max-width:600px;margin:0 auto 1.5rem;}.hero-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}.section-title h2{font-size:1.8rem;color:var(--primary);position:relative;display:inline-block;padding-bottom:0.5rem;}.section-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--accent);}.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}.service-card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:var(--transition);}.service-card:hover{transform:translateY(-5px);}.service-img{height:100px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;}.service-content{padding:1.5rem;}.service-content h3{font-size:1.3rem;margin-bottom:0.8rem;color:var(--primary);}.service-content ul{margin-left:1.2rem;margin-bottom:1rem;font-size:0.95rem;color:#555;}.price{font-size:1.3rem;font-weight:700;color:var(--accent);margin:1rem 0;}.contact-form{max-width:500px;margin:0 auto;padding:1.5rem;background:var(--light);border-radius:var(--radius);box-shadow:var(--shadow);}.form-group{margin-bottom:1.2rem;}.form-group label{display:block;margin-bottom:0.4rem;font-weight:600;font-size:0.9rem;color:var(--primary);}.form-group input,.form-group textarea,.form-group select{width:100%;padding:0.6rem;border:1px solid #ddd;border-radius:var(--radius);font-size:0.95rem;background:white;}.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);outline:none;}.error-message{font-size:0.8rem;color:#e00;margin-top:0.3rem;}.notification{position:fixed;top:15px;right:15px;padding:10px 15px;border-radius:8px;color:white;font-size:0.9rem;z-index:2000;opacity:0;transform:translateY(-10px);transition:all 0.3s ease;}.notification.show{opacity:1;transform:translateY(0);}.notification.success{background:#10b981;}.notification.error{background:#ef4444;}.close-notification{background:none;border:none;color:white;font-weight:bold;cursor:pointer;font-size:1.1rem;}.footer-info{font-size:0.85rem;color:#cbd5e1;margin-top:0.5rem;}.payment-warning{font-size:0.9rem;color:#ef4444;font-weight:500;text-align:center;margin:2rem auto;max-width:600px;}.notification-daily{background:#0f172a;}.social-links{margin:1rem 0;display:flex;justify-content:center;gap:1rem;}.social-links a{color:white;font-size:1.2rem;}footer{background:var(--primary);color:white;text-align:center;padding:1.5rem 0;font-size:0.9rem;}@media (max-width:768px){.menu-toggle{display:flex;}.header-buttons{position:fixed;top:70px;right:-100%;flex-direction:column;width:100%;background:var(--primary);padding:0.5rem 1rem;transition:right 0.3s ease;}.header-buttons.active{right:0;}.hero h1{font-size:2rem;}.hero p{font-size:0.95rem;}.container{padding:0 10px;}}@media (prefers-reduced-motion:reduce){*:transition:none!important;}</style></head><body><div id="notification-container" aria-live="polite"></div><header role="banner"><div class="container"><div class="header-content"><a href="#" class="logo" aria-label="CBO - Inicio">CBO</a><button class="menu-toggle" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button><div class="header-buttons"><a href="https://mega.nz/file/jPpXxIQS#R4Yb3wONsROmXVekXw4RQmSOO3bfIvGW7ZdU2_Pfhb4" class="btn" download><i class="fas fa-download"></i> CBO App</a><a href="https://apk.e-droid.net/apk/app3494684-t8z7op.apk?v=15" class="btn" download><i class="fas fa-download"></i> PACK App</a></div></div></div></header><main><section class="hero" aria-labelledby="hero-heading"><div class="container"><h1 id="hero-heading">OBTÉN UN SOPORTE WEB</h1><p>Páginas web accesibles para mipymes.</p><p>Presencia digital en minutos.</p><div class="hero-buttons"><a href="#services" class="btn">Ver Planes</a><a href="#contact" class="btn">Contactar</a></div></div></section><section id="services" aria-labelledby="services-heading"><div class="container"><div class="section-title"><h2 id="services-heading">ELIGE UN PLAN</h2></div><div class="services"><div class="service-card"><div class="service-img">TIENDA ONLINE</div><div class="service-content"><h3>Características:</h3><ul><li>Diseño simple</li><li>Hasta 20 productos</li><li>Carrito de compras</li><li>Métodos de envío</li><li>Servidor 6 meses</li></ul><div class="price">$4000/CUP</div><a href="#contact" class="btn">Solicitar</a></div></div><div class="service-card"><div class="service-img">SERVICIO LOCAL</div><div class="service-content"><h3>Características:</h3><ul><li>Diseño simple</li><li>Galería (4 imágenes)</li><li>Horarios y ubicación</li><li>Sistema de reserva (WhatsApp)</li><li>Enlace a redes</li><li>Servidor 6 meses</li></ul><div class="price">$4000/CUP</div><a href="#contact" class="btn">Solicitar</a></div></div><div class="service-card"><div class="service-img">PROMOCION</div><div class="service-content"><h3>Oferta Alternativa:</h3><ul><li>Soporte directo</li><li>Respuesta inmediata</li></ul><a href="https://wa.me/5355112410?text=Hola,%20quiero%20más%20información" class="btn">Contactar</a></div></div></div></div></section><section id="contact" aria-labelledby="contact-heading"><div class="container"><div class="section-title"><h2 id="contact-heading">Contáctanos</h2></div><p class="payment-warning">⚠️ Todos los servicios deben pagarse por TransferMóvil antes de iniciar el proceso. Por favor, confirma el pago al contactar.</p><form id="contactForm" class="contact-form" novalidate><div class="form-group"><label for="name">Nombre</label><input type="text" id="name" name="name" required/><span class="error-message" id="name-error"></span></div><div class="form-group"><label for="email">Correo</label><input type="email" id="email" name="email" required/><span class="error-message" id="email-error"></span></div><div class="form-group"><label for="service">Plan</label><select id="service" name="service" required><option value="">Seleccionar</option><option value="tienda">Tienda Online</option><option value="servicio">Servicio Local</option></select><span class="error-message" id="service-error"></span></div><div class="form-group"><label for="message">Descripción</label><textarea id="message" name="message" required></textarea><span class="error-message" id="message-error"></span></div><button type="submit" class="btn">Enviar</button></form></div></section></main><footer><div class="container"><p>REDES OFICIALES</p><div class="social-links"><a href="https://youtube.com/@cbo_oficial?feature=shared" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a><a href="https://x.com/CubaBazarOnline?t=iOC4afVn_e60CmbOl2j3IQ&s=09" target="_blank" rel="noopener"><i class="fab fa-x"></i></a><a href="https://whatsapp.com/channel/0029Vb61NTa5vKA3hCMIQr3j" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></div><p>&copy; 2025 🚀CBO. Todos los derechos reservados.</p><p class="footer-info">Plataforma 100% online. Todos los servicios se gestionan digitalmente sin necesidad de reuniones presenciales.</p></div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const menuToggle=document.querySelector('.menu-toggle');const headerButtons=document.querySelector('.header-buttons');menuToggle?.addEventListener('click',()=>{const expanded=menuToggle.getAttribute('aria-expanded')==='true';menuToggle.setAttribute('aria-expanded',!expanded);headerButtons.classList.toggle('active');});const form=document.getElementById('contactForm');form?.addEventListener('submit',(e)=>{e.preventDefault();const data=new FormData(form);const name=data.get('name').trim();const email=data.get('email').trim();const service=data.get('service');const message=data.get('message').trim();if(!name||!email||!service||!message){showNotification('error','Completa todos los campos');return;}if(!/^\S+@\S+\.\S+$/.test(email)){showNotification('error','Correo inválido');return;}const body=`Nombre: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APlan: ${encodeURIComponent(service)}%0AMensaje:%0A${encodeURIComponent(message)}`;window.location.href=`mailto:cubabazaronline@gmail.com?subject=Solicitud CBO&body=${body}`;showNotification('success','Redirigiendo al correo...');form.reset();});function showNotification(type,message){const container=document.getElementById('notification-container');const notif=Object.assign(document.createElement('div'),{className:`notification ${type}`,innerHTML:`<span>${message}</span><button class="close-notification" aria-label="Cerrar">&times;</button>`});notif.querySelector('.close-notification').onclick=()=>close(notif);container.appendChild(notif);setTimeout(()=>notif.classList.add('show'),10);setTimeout(()=>close(notif),5000);function close(el){el.classList.remove('show');setTimeout(()=>el.remove(),300);}}const lastNotification=localStorage.getItem('lastNotification');const today=new Date().toDateString();if(!lastNotification||lastNotification!==today){showNotification('daily','✨ Recomendamos el plan <strong>Tienda Online</strong> para negocios con productos físicos. ¡Ideal para comenzar tu presencia digital!');localStorage.setItem('lastNotification',today);}});</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>CBO</title>
+  <meta name="keywords" content="soporte web, tienda online Cuba, página web mipyme"/>
+  <meta name="author" content="🚀CBO"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="google-site-verification" content="KwYd-p4Sl1VlkdQmdyKKgwMpT7BsxFKygnGzibzNijQ"/>
+  <meta property="og:title" content="🚀CBO - Soporte Web para Mipymes"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://cbo-cubabazaronlines-projects.vercel.app/"/>
+  <link rel="icon" href="favicon.png" type="image/png"/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #111;
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --light: #f8fafc;
+      --danger: #ef4444;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --radius-md: 8px;
+      --transition: all 0.3s ease;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, textarea, select {
+      font-family: var(--font);
+      border: none;
+      outline: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Header mejorado */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: white;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 30px;
+      height: 20px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .menu-toggle span {
+      height: 2px;
+      background: white;
+      border-radius: 1px;
+      transition: 0.3s;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: white;
+      padding: 0.65rem 1.3rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .btn.secondary:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Hero mejorado */
+    .hero {
+      height: 80vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      padding: 2rem 0;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Secciones */
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.9rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.6rem;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Servicios */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+      border: 1px solid #eee;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-img {
+      height: 120px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .service-content {
+      padding: 1.6rem;
+    }
+
+    .service-content h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .service-content ul {
+      margin-left: 1.3rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 1rem 0;
+    }
+
+    /* Formulario */
+    .contact-form {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.8rem;
+      background: var(--light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      background: white;
+      transition: border 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .error-message {
+      font-size: 0.85rem;
+      color: var(--danger);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* Notificaciones mejoradas */
+    #notification-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 380px;
+    }
+
+    .notification {
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      color: white;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.4s ease;
+      min-width: 280px;
+    }
+
+    .notification.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .notification i {
+      font-size: 1.1rem;
+    }
+
+    .notification.success {
+      background: var(--success);
+    }
+
+    .notification.error {
+      background: var(--danger);
+    }
+
+    .notification.daily {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .notification.daily strong {
+      color: #fff;
+    }
+
+    .close-notification {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: auto;
+    }
+
+    /* Advertencia de pago */
+    .payment-warning {
+      font-size: 0.95rem;
+      color: var(--danger);
+      font-weight: 500;
+      text-align: center;
+      margin: 1.8rem auto;
+      max-width: 600px;
+      padding: 12px 16px;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius-md);
+      background-color: #fef2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .payment-warning i {
+      color: var(--danger);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.8rem 0;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.3rem;
+      transition: transform 0.2s;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-info {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-top: 0.8rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .header-buttons {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        width: 100%;
+        background: var(--primary);
+        padding: 0.8rem 1rem;
+        transition: right 0.4s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .header-buttons.active {
+        right: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 0 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="notification-container" aria-live="polite"></div>
+
+  <header role="banner">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo" aria-label="CBO - Inicio">
+          <i class="fas fa-rocket"></i> CBO
+        </a>
+        <button class="menu-toggle" aria-label="Menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="header-buttons">
+          <a href="https://mega.nz/file/jPpXxIQS#R4Yb3wONsROmXVekXw4RQmSOO3bfIvGW7ZdU2_Pfhb4" class="btn" download>
+            <i class="fas fa-download"></i> CBO App
+          </a>
+          <a href="https://apk.e-droid.net/apk/app3494684-t8z7op.apk?v=15" class="btn secondary" download>
+            <i class="fas fa-mobile-alt"></i> PACK App
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <h1 id="hero-heading">OBTÉN TU PRESENCIA DIGITAL</h1>
+        <p>Páginas web rápidas, modernas y accesibles para mipymes.</p>
+        <p>Convierte visitas en clientes en minutos.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn">
+            <i class="fas fa-box-open"></i> Ver Planes
+          </a>
+          <a href="#contact" class="btn secondary">
+            <i class="fas fa-comment"></i> Contactar
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="services-heading">ELIGE TU PLAN</h2>
+        </div>
+        <div class="services">
+          <div class="service-card">
+            <div class="service-img">TIENDA ONLINE</div>
+            <div class="service-content">
+              <h3>Características:</h3>
+              <ul>
+                <li>Diseño profesional y responsive</li>
+                <li>Hasta 20 productos gestionables</li>
+                <li>Carrito de compras integrado</li>
+                <li>Opciones de envío personalizadas</li>
+                <li>Hosting incluido por 6 meses</li>
+              </ul>
+              <div class="price">$4000 CUP</div>
+              <a href="#contact" class="btn">
+                <i class="fas fa-shopping-cart"></i> Solicitar
+              </a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-img">SERVICIO LOCAL</div>
+            <div class="service-content">
+              <h3>Características:</h3>
+              <ul>
+                <li>Diseño limpio y profesional</li>
+                <li>Galería con hasta 4 imágenes</li>
+                <li>Horarios y ubicación en mapa</li>
+                <li>Sistema de reservas vía WhatsApp</li>
+                <li>Enlaces a redes sociales</li>
+                <li>Hosting incluido por 6 meses</li>
+              </ul>
+              <div class="price">$4000 CUP</div>
+              <a href="#contact" class="btn">
+                <i class="fas fa-calendar-check"></i> Solicitar
+              </a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-img" style="background:var(--warning)">PROMOCIÓN</div>
+            <div class="service-content">
+              <h3>¿Necesitas ayuda rápida?</h3>
+              <ul>
+                <li>Soporte directo y personalizado</li>
+                <li>Respuesta inmediata</li>
+                <li>Asesoría sin costo inicial</li>
+              </ul>
+              <a href="https://wa.me/5355112410?text=Hola,%20quiero%20más%20información" class="btn" style="background:var(--warning)">
+                <i class="fab fa-whatsapp"></i> Chatear ahora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="contact-heading">Contáctanos</h2>
+        </div>
+        <p class="payment-warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <strong>Los servicios requieren pago por TransferMóvil</strong>
+        </p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre"/>
+            <span class="error-message" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="tu@ejemplo.com"/>
+            <span class="error-message" id="email-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="service">Plan deseado</label>
+            <select id="service" name="service" required>
+              <option value="">Seleccionar plan</option>
+              <option value="tienda">Tienda Online</option>
+              <option value="servicio">Servicio Local</option>
+            </select>
+            <span class="error-message" id="service-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Describe tu negocio o necesidad</label>
+            <textarea id="message" name="message" required rows="4" placeholder="Ej: Vendo artesanías y necesito una tienda online..."></textarea>
+            <span class="error-message" id="message-error"></span>
+          </div>
+          <button type="submit" class="btn" style="width:100%">
+            <i class="fas fa-paper-plane"></i> Enviar solicitud
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>REDES OFICIALES</p>
+      <div class="social-links">
+        <a href="https://youtube.com/@cbo_oficial?feature=shared" target="_blank" rel="noopener">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://x.com/CubaBazarOnline?t=iOC4afVn_e60CmbOl2j3IQ&s=09" target="_blank" rel="noopener">
+          <i class="fab fa-x"></i>
+        </a>
+        <a href="https://whatsapp.com/channel/0029Vb61NTa5vKA3hCMIQr3j" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <p>&copy; 2025 🚀 CBO. Todos los derechos reservados.</p>
+      <p class="footer-info">
+        Plataforma 100% online. Todos los servicios se gestionan digitalmente sin necesidad de reuniones presenciales.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const headerButtons = document.querySelector('.header-buttons');
+
+      menuToggle?.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        headerButtons.classList.toggle('active');
+      });
+
+      const form = document.getElementById('contactForm');
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const data = new FormData(form);
+        const name = data.get('name').trim();
+        const email = data.get('email').trim();
+        const service = data.get('service');
+        const message = data.get('message').trim();
+
+        // Validaciones
+        if (!name) return showError('name-error', 'Ingresa tu nombre');
+        if (!email) return showError('email-error', 'Ingresa tu correo');
+        if (!/^\S+@\S+\.\S+$/.test(email)) return showError('email-error', 'Correo inválido');
+        if (!service) return showError('service-error', 'Selecciona un plan');
+        if (!message) return showError('message-error', 'Describe tu necesidad');
+
+        // Construir correo
+        const subject = `Solicitud CBO - ${service === 'tienda' ? 'Tienda Online' : 'Servicio Local'}`;
+        const body = `
+Nombre: ${encodeURIComponent(name)}
+Email: ${encodeURIComponent(email)}
+Plan: ${service === 'tienda' ? 'Tienda Online' : 'Servicio Local'}
+Mensaje:
+${encodeURIComponent(message)}
+        `.trim();
+
+        window.location.href = `mailto:cubabazaronline@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        showNotification('success', 'Redirigiendo al correo... 📩');
+        form.reset();
+      });
+
+      function showError(id, msg) {
+        document.getElementById(id).textContent = msg;
+        showNotification('error', msg);
+        setTimeout(() => document.getElementById(id).textContent = '', 3000);
+      }
+
+      function showNotification(type, message) {
+        const container = document.getElementById('notification-container');
+        const icon = type === 'success' ? 'check-circle' : type === 'error' ? 'times-circle' : 'info-circle';
+        const notif = Object.assign(document.createElement('div'), {
+          className: `notification ${type}`,
+          innerHTML: `
+            <i class="fas fa-${icon}"></i>
+            <span>${message}</span>
+            <button class="close-notification" aria-label="Cerrar">&times;</button>
+          `
+        });
+
+        notif.querySelector('.close-notification').onclick = () => close(notif);
+        container.appendChild(notif);
+        setTimeout(() => notif.classList.add('show'), 10);
+        setTimeout(() => close(notif), 5000);
+
+        function close(el) {
+          el.classList.remove('show');
+          setTimeout(() => el.remove(), 300);
+        }
+      }
+
+      // Notificación diaria (solo una vez por día)
+      const lastNotification = localStorage.getItem('lastNotification');
+      const today = new Date().toDateString();
+      if (!lastNotification || lastNotification !== today) {
+        showNotification('daily', `
+          ✨ <strong>Recomendamos el plan Tienda Online</strong> para negocios con productos físicos. 
+          ¡Ideal para comenzar tu presencia digital!
+        `);
+        localStorage.setItem('lastNotification', today);
+      }
+    });
+  </script>
+</body>
+</html>
