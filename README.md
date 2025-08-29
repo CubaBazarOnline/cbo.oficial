@@ -1,5 +1,3 @@
-🚀 CBO
-
 ✨ ¿Por qué elegirnos?
 
 - 🚀 Entrega en 48 horas.
